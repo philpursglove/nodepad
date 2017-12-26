@@ -22,6 +22,12 @@ var app = express();
 var db = require('./model/db');
 var note = require('/model/notes');
 
+var routes = require('./routes/index');
+var notes = require(./routes/notes');
+
+app.use('/', routes);
+app.use('/notes', notes);
+
 
 // view engine setup
 
