@@ -20,6 +20,7 @@ var app = express();
 
 
 var db = require('./model/db');
+var note = require('/model/notes');
 
 
 // view engine setup
