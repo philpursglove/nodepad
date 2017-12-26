@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddNote(name="addnote",method="post",action="/notes")
+        p Title: 
+            input#inputTitle(type="text", name="title")
+        p Note:
+            textarea#inputNote(type="text", name="note")
+        p
+            button#btnSubmit(type="submit") submit
