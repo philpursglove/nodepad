@@ -14,8 +14,8 @@ router.use(methodOverride(function(req, res){
       }
 }))
 
-//build the REST operations at the base for blobs
-//this will be accessible from http://127.0.0.1:3000/blobs if the default route for / is left unchanged
+//build the REST operations at the base for notes
+//this will be accessible from http://127.0.0.1:3000/notes if the default route for / is left unchanged
 router.route('/')
     //GET all blobs
     .get(function(req, res, next) {
@@ -26,14 +26,14 @@ router.route('/')
               } else {
                   //respond to both HTML and JSON. JSON responses require 'Accept: application/json;' in the Request Header
                   res.format({
-                      //HTML response will render the index.jade file in the views/notes folder. We are also setting "blobs" to be an accessible variable in our jade view
+                      //HTML response will render the index.jade file in the views/notes folder. We are also setting "notes" to be an accessible variable in our jade view
                     html: function(){
                         res.render('notes/index', {
                               title: 'All my Notes',
                               "notes" : notes
                           });
                     },
-                    //JSON response will show all blobs in JSON format
+                    //JSON response will show all notes in JSON format
                     json: function(){
                         res.json(notes);
                     }
