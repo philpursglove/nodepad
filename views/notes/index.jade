@@ -6,7 +6,7 @@ block content
     ul
         - each note, i in notes
             li
-                = note.title
+                = note.Title
                 form(action='/notes/#{note._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
                     input(type='hidden',value='DELETE',name='_method')
                     button(type='submit' class='btn btn-danger').
