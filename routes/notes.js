@@ -48,8 +48,8 @@ router.route('/')
         var note = req.body.note;
         //call the create function for our database
         mongoose.model('Note').create({
-            note : note,
-            title : title,
+            NoteText : note,
+            Title : title,
         }, function (err, note) {
               if (err) {
                   res.send("There was a problem adding the information to the database.");
@@ -166,8 +166,8 @@ router.put('/:id/edit', function(req, res) {
         mongoose.model('Note').findById(req.id, function (err, note) {
             //update it
             note.update({
-                title : title,
-                note : note
+                Title : title,
+                NoteText : note
             }, function (err, blobID) {
               if (err) {
                   res.send("There was a problem updating the information to the database: " + err);
