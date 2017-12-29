@@ -5,8 +5,10 @@ block content
         #{title}
     form#formAddNote(name="addnote",method="post",action="/notes")
         p Title: 
-            input#inputTitle(type="text", name="title")
+            input#inputTitle(type="text", name="title" required)
         p Note:
-            textarea#inputNote(type="text", name="note" cols='40' rows='5')
+            textarea#inputNote(type="text", name="note" cols='40' rows='5' required)
         p
             button#btnSubmit(type="submit") submit
+        script.
+            $('#formAddNote').validate()
